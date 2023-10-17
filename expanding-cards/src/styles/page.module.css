@@ -1,0 +1,5 @@
+.main {
+  height: inherit;
+  display: grid;
+  place-items: center;
+}

@@ -1,0 +1,30 @@
+body {
+  margin: 0px;
+  height: 100vh;
+  background-color: #EE171F
+}
+
+section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 1000px;
+  height: 400px;
+}
+
+section img {
+  flex-grow: 1;
+  border-radius: 10px;
+  width: 0px;
+  object-fit: cover;
+  opacity: .8;
+  transition: .5s ease;
+}
+
+section img:hover {
+  cursor: pointer;
+  width: 600px;
+  opacity: 1;
+  filter: contrast(120%);
+  border: 5px solid #FFFFFF;
+}
