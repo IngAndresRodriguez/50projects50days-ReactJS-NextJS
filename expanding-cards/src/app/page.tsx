@@ -39,7 +39,6 @@ export function Item({src, alt}: Image) {
 export default function Home() {
   return (
     <Box component={'main'} className={styles.main}>
-      <h1></h1>
       <Box component={'section'}>
         {
           images.map(image => (
