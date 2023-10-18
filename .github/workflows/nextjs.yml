@@ -85,17 +85,20 @@ jobs:
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        working-directory: ${{ matrix.site_dir }}
 
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        working-directory: ${{ matrix.site_dir }}
 
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
+        working-directory: ${{ matrix.site_dir }}
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./out
+          path: ${{ matrix.site_dir }}/out
 
   # Deployment job
   deploy:
